@@ -1,12 +1,14 @@
 import lombok.Builder;
-import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import utils.ComputerTool;
 
-@Getter
 @Setter
 @Builder
 @ToString
+/**
+ * 分数类
+ */
 public class Fraction {
 
     /**
@@ -18,4 +20,20 @@ public class Fraction {
      * 分母
      */
     private int denominator;
+
+    /**
+     * 获取约分后的分子
+     * @return
+     */
+    public int getNumerator(){
+        return this.numerator/ComputerTool.getCommonDivisor(this.numerator,this.denominator);
+    }
+
+    /**
+     * 获取约分后的分母
+     * @return
+     */
+    public int getDenominator(){
+        return this.denominator/ComputerTool.getCommonDivisor(this.numerator,this.denominator);
+    }
 }

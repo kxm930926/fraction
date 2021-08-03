@@ -6,6 +6,7 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println(ComputerTool.getCommonDivisor(0,2));
+        Fraction fraction = Fraction.builder().numerator(5).denominator(10).build();
+        System.out.println(fraction.getDenominator());
     }
 }
