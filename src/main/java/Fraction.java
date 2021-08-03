@@ -23,17 +23,27 @@ public class Fraction {
 
     /**
      * 获取约分后的分子
+     *
      * @return
      */
-    public int getNumerator(){
-        return this.numerator/ComputerTool.getCommonDivisor(this.numerator,this.denominator);
+    public int getNumerator() {
+        return this.numerator / ComputerTool.getCommonDivisor(this.numerator, this.denominator);
     }
 
     /**
      * 获取约分后的分母
+     *
      * @return
      */
-    public int getDenominator(){
-        return this.denominator/ComputerTool.getCommonDivisor(this.numerator,this.denominator);
+    public int getDenominator() {
+        return this.denominator / ComputerTool.getCommonDivisor(this.numerator, this.denominator);
+    }
+
+    /**
+     *
+     * @return 分数是否大于0
+     */
+    public boolean isPositive() {
+        return this.denominator * this.numerator > 0;
     }
 }
