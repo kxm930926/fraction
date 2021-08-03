@@ -29,7 +29,7 @@ public class ComputerTool {
      * 取出分数表达式的分子与分母
      *
      * @param str 待分解表达式
-     * @return
+     * @return 分子、分母
      */
     public static List<Integer> getNumByStr(String str) throws BusinessException {
         if (!str.contains("/")) {

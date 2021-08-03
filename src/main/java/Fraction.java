@@ -40,7 +40,6 @@ public class Fraction {
     }
 
     /**
-     *
      * @return 分数是否大于0
      */
     public boolean isPositive() {
