@@ -9,6 +9,6 @@ public class Main {
     public static void main(String[] args) throws BusinessException {
         Fraction fraction = Fraction.builder().numerator(5).denominator(10).build();
         System.out.println(fraction.getDenominator());
-        System.out.println(ComputerTool.getNumByStr("5/-10").get(1));
+        System.out.println(ComputerTool.getNumByStr("5/4").get(1));
     }
 }

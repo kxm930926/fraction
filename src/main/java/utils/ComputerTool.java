@@ -27,21 +27,25 @@ public class ComputerTool {
 
     /**
      * 取出分数表达式的分子与分母
+     *
      * @param str 待分解表达式
      * @return
      */
-    public static List<Integer> getNumByStr(String str) throws BusinessException{
-        if(!str.contains("/")){
+    public static List<Integer> getNumByStr(String str) throws BusinessException {
+        if (!str.contains("/")) {
             throw new BusinessException("表达式有误！");
         }
-        String tempStrs[]= str.split("/");
-        int numerator ;
+        String tempStrs[] = str.split("/");
+        int numerator;
         int denominator;
         try {
             numerator = Integer.valueOf(tempStrs[0]);
             denominator = Integer.valueOf(tempStrs[1]);
-        }catch (Exception e ){
+        } catch (Exception e) {
             throw new BusinessException("表达式有误！");
+        }
+        if (0 == denominator) {
+            throw new BusinessException("分数的分母不能为0");
         }
         ArrayList<Integer> list = new ArrayList<Integer>();
         list.add(numerator);
