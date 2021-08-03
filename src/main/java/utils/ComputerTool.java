@@ -1,5 +1,8 @@
 package utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ComputerTool {
 
     /**
@@ -20,5 +23,29 @@ public class ComputerTool {
             }
         }
         return 1;
+    }
+
+    /**
+     * 取出分数表达式的分子与分母
+     * @param str 待分解表达式
+     * @return
+     */
+    public static List<Integer> getNumByStr(String str) throws BusinessException{
+        if(!str.contains("/")){
+            throw new BusinessException("表达式有误！");
+        }
+        String tempStrs[]= str.split("/");
+        int numerator ;
+        int denominator;
+        try {
+            numerator = Integer.valueOf(tempStrs[0]);
+            denominator = Integer.valueOf(tempStrs[1]);
+        }catch (Exception e ){
+            throw new BusinessException("表达式有误！");
+        }
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(numerator);
+        list.add(denominator);
+        return list;
     }
 }
