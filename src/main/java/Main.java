@@ -31,7 +31,7 @@ public class Main {
             Fraction fraction = Fraction.builder().numerator(numList.get(0)).denominator(numList.get(1)).build();
             int numerator = fraction.getNumerator();
             int denominator = fraction.getDenominator();
-            if (numerator == denominator) {
+            if (numerator == denominator || numerator == -denominator) {
                 System.out.println("结果为：" + (fraction.isPositive() ? "" : "-") + 1);
             } else {
                 System.out.println("结果为：" + (fraction.isPositive() ? "" : "-") + numerator + "/" + denominator);
